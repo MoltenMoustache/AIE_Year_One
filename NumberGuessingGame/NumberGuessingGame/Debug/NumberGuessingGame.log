@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\s191184\documents\projects\year 1\numberguessinggame\numberguessinggame\main.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191184\documents\projects\year 1\numberguessinggame\numberguessinggame\main.cpp(65): warning C4715: 'BinarySearch': not all control paths return a value
+  NumberGuessingGame.vcxproj -> C:\Users\s191184\Documents\Projects\Year 1\NumberGuessingGame\Debug\NumberGuessingGame.exe
