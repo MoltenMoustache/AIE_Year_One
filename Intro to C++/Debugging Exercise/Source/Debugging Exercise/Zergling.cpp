@@ -6,7 +6,7 @@ Zergling::Zergling()
 {
 	maxHealth = 12;
 	health = maxHealth;
-	maxDamage = 6;
+	maxDamage = 5;
 }
 
 

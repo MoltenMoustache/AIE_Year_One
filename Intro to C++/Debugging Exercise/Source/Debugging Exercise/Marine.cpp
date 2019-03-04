@@ -6,7 +6,7 @@ Marine::Marine()
 {
 	maxHealth = 25;
 	health = maxHealth;
-	maxDamage = 10;
+	maxDamage = 12;
 }
 
 
