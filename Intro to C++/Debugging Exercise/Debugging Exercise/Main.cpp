@@ -60,17 +60,20 @@ int main()
 	bool isGameOver = false;
 	while (!isGameOver) // If anyone is left alive to fight . . .
 	{
+		const size_t deadTeam = 0;
+		if (!marineAlive(squad)) {
+			isGameOver = true;
+			break;
+		}
+		else if (!zerglingAlive(swarm)){
+			isGameOver = true;
+			break;
+		}
 
 		marinesTurn(squad, swarm);
 
 		zerglingsTurn(swarm, squad);
 		
-		if (!marineAlive(squad)) {
-			isGameOver = true;
-		}
-		else if (!zerglingAlive(swarm)){
-			isGameOver = true;
-		}
 	}
 
 	// Once one team is completely eliminated, the fight ends and one team wins
@@ -78,10 +81,12 @@ int main()
 	if (marineAlive(squad))
 	{
 		cout << "The Marines win." << endl;
+		cout << "There were " << squad.size() << " Marines remaining!" << endl;
 	}
 	else
 	{
 		cout << "The Zerg win." << endl;
+		cout << "There were "<<swarm.size() << " Zerglings remaining!" << endl;
 	}
 
 	system("pause");
@@ -90,13 +95,25 @@ int main()
 // Is there a Marine Alive?
 bool marineAlive(vector<Marine> squad)
 {
-	return squad.size();
+	if (squad.size() <= 0) {
+		return false;
+	}
+	else {
+		return true;
+
+	}
+	
 }
 
 // Is there a zergling Alive
 bool zerglingAlive(vector<Zergling> swarm)
 {
-	return swarm.size();
+	if (swarm.size() <= 0) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 
@@ -112,6 +129,9 @@ void marinesTurn(vector<Marine> &squad, vector<Zergling> &swarm) {
 			{
 				swarm.erase(swarm.begin());
 				cout << "!!!\tThe zergling dies.\t!!!" << endl << endl;
+				if (swarm.size() <= 0) {
+					break;
+				}
 			}
 
 		}
@@ -129,6 +149,9 @@ void zerglingsTurn(vector<Zergling> &swarm, vector<Marine> &squad) {
 			{
 				squad.erase(squad.begin());
 				cout << "!!!\tThe marine succumbs to his wounds.\t!!!" << endl << endl;
+				if (squad.size() <= 0) {
+					break;
+				}
 			}
 		}
 	}
