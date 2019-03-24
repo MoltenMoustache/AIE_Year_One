@@ -3,19 +3,16 @@
 
 using namespace std;
 
-int main() {
-	char characterArray[] = { 'H', 'e', 'l', 'l', 'o', ' ', 't', 'h', 'e', 'r', 'e', '!'};
+const int BUFFER_SIZE = 12;
 
-	char character;
-	int integer;
-	int charArraySize = sizeof(characterArray);
+int main() {
+	char characterArray[BUFFER_SIZE] = { 'H', 'e', 'l', 'l', 'o', ' ', 't', 'h', 'e', 'r', 'e', '!'};
+
+	char *character;
 
 	ofstream fout("Data.dat", ios_base::out | ios::binary);
-
-	for (size_t i = 0; i < charArraySize; i++)
-	{
-		fout.write(&characterArray[i], charArraySize);
-	}
+	fout.seekp(0, ios::beg);
+	fout.write(characterArray, BUFFER_SIZE);
 
 	fout.close();
 
@@ -23,13 +20,14 @@ int main() {
 
 
 
-	ifstream fin("Data.dat", ios_base::in || ios::binary);
+	ifstream fin("Data.dat", ios_base::in || ios::binary || ios::ate);
 
-	fin.seekg(5, ios::cur);
-	while (!fin.eof() && fin.peek() != EOF) {
-		fin.read((char*)&character, charArraySize);
-		cout << character;
-	}
+	streampos size = fin.tellg();
+	character = new char[size];
+	fin.seekg(0, ios::beg);
+	//fin.seekg(5, ios::cur);
+	fin.read(character, BUFFER_SIZE);
+	cout << character;
 
 	cout << endl;
 
