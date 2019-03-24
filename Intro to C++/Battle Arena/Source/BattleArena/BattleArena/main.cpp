@@ -14,18 +14,15 @@
 #include <ctime>
 #include "Viking.h"
 
-// constant variables
-const int TEAM_SIZE = 2;
-
 // function declarations
 void ClearBuffer();
-void AssignTeam(Viking team[]);
-void DisplayTeams(Viking a_teamOne[], Viking a_teamTwo[]);
-void Attack(Viking a_attackingViking, Viking a_attackingTeam[], Viking a_targetTeam[]);
-void SelectAttacker(Viking a_attackingTeam[], Viking a_targetTeam[]);
-bool CheckWin(Viking teamOne[], Viking teamTwo[]);
+void AssignTeam(Viking team[], int a_size);
+void DisplayTeams(Viking a_teamOne[], Viking a_teamTwo[], int a_size);
+void Attack(Viking a_attackingViking, Viking a_attackingTeam[], Viking a_targetTeam[], int a_size);
+void SelectAttacker(Viking a_attackingTeam[], Viking a_targetTeam[], int a_size);
+bool CheckWin(Viking teamOne[], Viking teamTwo[], int a_size);
 void Swap(Viking *xp, Viking *yp);
-void BubbleSort(Viking teamOne[]);
+void BubbleSort(Viking teamOne[], int a_size);
 
 using namespace std;
 
@@ -36,32 +33,42 @@ int main() {
 
 	bool isGameOver = false;
 	bool isTeamOnesTurn = true;											// handles which team is currently attacking
-	Viking teamOne[TEAM_SIZE];											// team of Vikings
-	Viking teamTwo[TEAM_SIZE];											// team of Vikings
+	int team_size = 1;
+	Viking *teamOne;
+	
+	Viking *teamTwo;
+	
 
 	cout << "==\tVIKING BATTLE SIMULATOR\t==\n\n";
+	cout << "How many Vikings do you wish to be on each team?\n";
+	cin >> team_size;
+	ClearBuffer();
+
+	teamOne = new Viking[team_size];												// team of Vikings
+	teamTwo = new Viking[team_size];												// team of Vikings
+
 	cout << "=\tPlease enter details for Team One's Vikings.\t=\n";
 	system("pause");
-	AssignTeam(teamOne);												// calls the AssignTeam() function, passing in the first team as a parameter
+	AssignTeam(teamOne, team_size);												// calls the AssignTeam() function, passing in the first team as a parameter
 
 	cout << "=\tPlease enter details for Team Two's Vikings.\t=\n";
 	system("pause");
-	AssignTeam(teamTwo);												// calls the AssignTeam() function, passing in the second team as a parameter
+	AssignTeam(teamTwo, team_size);												// calls the AssignTeam() function, passing in the second team as a parameter
 
-	DisplayTeams(teamOne, teamTwo);										// displays both teams after assignment
+	DisplayTeams(teamOne, teamTwo, team_size);										// displays both teams after assignment
 
 	while (!isGameOver) {												// game loop
 
 		if (isTeamOnesTurn) {											// if it's team one's turn, attack team two and then flip the turn variable
-			SelectAttacker(teamOne, teamTwo);
+			SelectAttacker(teamOne, teamTwo, team_size);
 			isTeamOnesTurn = !isTeamOnesTurn;
 		}
 		else {															// if it's team two's turn, attack team two and then flip the turn variable
-			SelectAttacker(teamTwo, teamOne);
+			SelectAttacker(teamTwo, teamOne, team_size);
 			isTeamOnesTurn = !isTeamOnesTurn;
 		}
 
-		if (CheckWin(teamOne, teamTwo)) {								// checks if either team has been completely wiped out
+		if (CheckWin(teamOne, teamTwo, team_size)) {								// checks if either team has been completely wiped out
 			isGameOver = true;
 		}
 	}
@@ -69,11 +76,11 @@ int main() {
 	system("pause");
 }
 
-void AssignTeam(Viking team[]) {
+void AssignTeam(Viking team[], int size) {
 
 	system("cls");														// clears the console
 
-	for (size_t i = 0; i < TEAM_SIZE; i++)								// loops through the team members of the team passed into the function
+	for (int i = 0; i < size; i++)								// loops through the team members of the team passed into the function
 	{
 		cout << "Enter a name for this Viking: ";
 		char input_name[BUFFER_LENGTH];
@@ -135,14 +142,14 @@ void AssignTeam(Viking team[]) {
 	}
 }
 
-void DisplayTeams(Viking a_teamOne[], Viking a_teamTwo[]) {
+void DisplayTeams(Viking a_teamOne[], Viking a_teamTwo[], int a_size) {
 	system("cls");
 
 	cout << "Team One" << "\t" << "Team Two\n";
 	cout << "========================\n";
 
 	// loops through all team members of both teams and displays the names of each member adjacent to the other team
-	for (size_t index = 0; index < TEAM_SIZE; index++)
+	for (int index = 0; index < a_size; index++)
 	{
 		cout << a_teamOne[index].get_name() << "\t\t" << a_teamTwo[index].get_name() << endl;
 	}
@@ -150,10 +157,10 @@ void DisplayTeams(Viking a_teamOne[], Viking a_teamTwo[]) {
 	cout << "========================\n\n";
 }
 
-void Attack(Viking a_attackingViking, Viking a_attackingTeam[], Viking a_targetTeam[]) {
+void Attack(Viking a_attackingViking, Viking a_attackingTeam[], Viking a_targetTeam[], int a_size) {
 
 	int lastAlive = 0;
-	for (size_t i = 0; i < TEAM_SIZE; i++)								// loops through the targetted team's team members, checking for alive vikings
+	for (int i = 0; i < a_size; i++)								// loops through the targetted team's team members, checking for alive vikings
 	{
 		if (!a_targetTeam[i].isSlain) {
 			lastAlive = i;												// if a living viking is found, the variable 'lastAlive' is set to their position
@@ -170,16 +177,16 @@ void Attack(Viking a_attackingViking, Viking a_attackingTeam[], Viking a_targetT
 	}
 }
 
-void SelectAttacker(Viking a_attackingTeam[], Viking a_targetTeam[]) {
+void SelectAttacker(Viking a_attackingTeam[], Viking a_targetTeam[], int a_size) {
 
-	BubbleSort(a_targetTeam);											//sort the team of targets
+	BubbleSort(a_targetTeam, a_size);											//sort the team of targets
 
 	bool vikingFound = false;
 	while (!vikingFound) {
-		Viking attackingViking = a_attackingTeam[rand() % TEAM_SIZE];		//randomly select a viking from the attacking team
+		Viking attackingViking = a_attackingTeam[rand() % a_size];		//randomly select a viking from the attacking team
 
 		if (!attackingViking.isSlain) {
-			Attack(attackingViking, a_attackingTeam, a_targetTeam);				//selected viking from attacking team attacks enemy team
+			Attack(attackingViking, a_attackingTeam, a_targetTeam, a_size);				//selected viking from attacking team attacks enemy team
 			vikingFound = true;
 		}
 		else {
@@ -193,12 +200,12 @@ void ClearBuffer() {
 	cin.ignore(INT_MAX, '\n');
 }
 
-bool CheckWin(Viking teamOne[], Viking teamTwo[]) {
+bool CheckWin(Viking teamOne[], Viking teamTwo[], int a_size) {
 
 	bool teamOneDead = true;
 	bool teamTwoDead = true;
 
-	for (size_t i = 0; i < TEAM_SIZE; i++)								//loops through all members of both teams
+	for (int i = 0; i < a_size; i++)								//loops through all members of both teams
 	{
 		if (!teamOne[i].isSlain) {
 			teamOneDead = false;										//if any member of a team is alive, the team is not considered wiped out
@@ -225,11 +232,11 @@ void Swap(Viking *xp, Viking *yp) {										//function for swapping vikings in 
 	*yp = temp;
 }
 
-void BubbleSort(Viking a_teamToSort[]) {								//sorting function for viking health
+void BubbleSort(Viking a_teamToSort[], int a_size) {								//sorting function for viking health
 
-	for (size_t i = 0; i < TEAM_SIZE - 1; i++)							//loops an amount of times equal to the team size
+	for (int i = 0; i < a_size - 1; i++)							//loops an amount of times equal to the team size
 	{
-		for (size_t x = 0; x < TEAM_SIZE - i - 1; x++)					//loops through all members of a team
+		for (int x = 0; x < a_size - i - 1; x++)					//loops through all members of a team
 		{
 			if (a_teamToSort[x].get_health() < a_teamToSort[x + 1].get_health()) {	//if the viking's health is less than that of the next viking in the array
 				Swap(&a_teamToSort[x], &a_teamToSort[x + 1]);						//swap vikings
