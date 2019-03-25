@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\s191184\documents\github\aie_year_one\intro to c++\battle arena\source\battlearena\battlearena\main.cpp(32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Viking.cpp
+  Generating Code...
+c:\users\s191184\documents\github\aie_year_one\intro to c++\battle arena\source\battlearena\battlearena\main.cpp(224): warning C4715: 'CheckWin': not all control paths return a value
+  BattleArena.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Intro to C++\Battle Arena\Source\BattleArena\x64\Debug\BattleArena.exe

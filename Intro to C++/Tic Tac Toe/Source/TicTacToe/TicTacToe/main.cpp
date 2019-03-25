@@ -232,17 +232,14 @@ void TakeInput() {
 bool CheckWinCondition(int turn) {
 
 	//checking for horizontal/vertical matched tiles
-	for (size_t y = 0; y < MAP_SIZE; y++) //iterates through rows one by one
+	for (size_t y = 0; y < MAP_SIZE + 1; y++) //iterates through rows one by one
 	{
-		for (size_t x = 0; x < MAP_SIZE; x++) //iterates through columns one by one
-		{
-			if (GAME_MAP[y][x] != EMPTY && GAME_MAP[y][x] == GAME_MAP[y][x + 1] && GAME_MAP[y][x + 2] == GAME_MAP[y][x]) {
+			if (GAME_MAP[y][0] != EMPTY && GAME_MAP[y][0] == GAME_MAP[y][1] && GAME_MAP[y][2] == GAME_MAP[y][0]) {
 				return true;
 			}
-			else if (GAME_MAP[y][x] != EMPTY && GAME_MAP[y][x] == GAME_MAP[y + 1][x] && GAME_MAP[y + 2][x] == GAME_MAP[y][x]) {
+			if (GAME_MAP[0][y] != EMPTY && GAME_MAP[0][y] == GAME_MAP[1][y] && GAME_MAP[2][y] == GAME_MAP[0][2]) {
 				return true;
 			}
-		}
 	}
 
 	//checking for diagonal matched tiles

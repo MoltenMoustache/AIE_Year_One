@@ -1,1 +1,7 @@
-﻿  Debugging Exercise.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Intro to C++\Debugging Exercise\Source\x64\Debug\Debugging Exercise.exe
+﻿  Entity.cpp
+  Main.cpp
+c:\users\s191184\documents\github\aie_year_one\intro to c++\debugging exercise\source\debugging exercise\main.cpp(33): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Marine.cpp
+  Zergling.cpp
+  Generating Code...
+  Debugging Exercise.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Intro to C++\Debugging Exercise\Source\x64\Debug\Debugging Exercise.exe

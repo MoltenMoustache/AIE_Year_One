@@ -1,10 +1,12 @@
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 const int ARRAY_SIZE = 100;
 bool BinarySearch(int a_arr[], const int a_array_length, int a_first_guess, int& loops);
 void GuessNumber(int guess);
+void GuessNumber(int guess, int a_previousGuess);
 char GetInput();
 void NumberGuessed();
 
@@ -19,7 +21,7 @@ int main() {
 	system("pause");
 
 	srand(time(nullptr));
-	guessedNumber = (rand() % ARRAY_SIZE + 1);
+	guessedNumber = 50;// (rand() % ARRAY_SIZE + 1);
 
 
 	while (!BinarySearch(numbers, ARRAY_SIZE, guessedNumber, turns)) {
@@ -37,6 +39,7 @@ bool BinarySearch(int a_arr[], const int a_array_length, int a_first_guess, int&
 	int max = ARRAY_SIZE;
 	int mid = a_first_guess;
 	bool isFound = false;
+	int previousGuess = a_first_guess;
 
 	GuessNumber(a_first_guess);
 	while (!isFound) {
@@ -44,12 +47,13 @@ bool BinarySearch(int a_arr[], const int a_array_length, int a_first_guess, int&
 		case '>':
 			max = (mid - 1);
 			mid = ((min + max) / 2);
-			GuessNumber(mid);
+			GuessNumber(mid, previousGuess);
+			previousGuess = mid;
 			break;
 		case '<':
 			min = (mid + 1);
 			mid = ((min + max) / 2);
-			GuessNumber(mid);
+			GuessNumber(mid, previousGuess);
 			break;
 		case '=':
 			isFound = true;
@@ -81,6 +85,15 @@ char GetInput() {
 }
 
 void GuessNumber(int guess) {
+	cout << "Is " << guess << " higher, lower or equal to your number?\n";
+}
+
+void GuessNumber(int guess, int a_previousGuess) {
+	if (guess == a_previousGuess) {
+		cout << "You're a filthy rotten cheater!\n\n";
+		system("pause");
+		exit(0);
+	}
 	cout << "Is " << guess << " higher, lower or equal to your number?\n";
 }
 

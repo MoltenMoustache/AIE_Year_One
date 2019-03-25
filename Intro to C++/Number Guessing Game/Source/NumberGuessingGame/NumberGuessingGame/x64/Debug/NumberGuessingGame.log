@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\s191184\documents\github\aie_year_one\intro to c++\number guessing game\source\numberguessinggame\numberguessinggame\main.cpp(23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191184\documents\github\aie_year_one\intro to c++\number guessing game\source\numberguessinggame\numberguessinggame\main.cpp(69): warning C4715: 'BinarySearch': not all control paths return a value
+  NumberGuessingGame.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Intro to C++\Number Guessing Game\Source\NumberGuessingGame\x64\Debug\NumberGuessingGame.exe
