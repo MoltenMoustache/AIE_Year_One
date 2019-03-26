@@ -1,4 +1,29 @@
-﻿  dynamic_array.cpp
-  main.cpp
-  Generating Code...
+﻿  main.cpp
+c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(8): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(95): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(89): note: while compiling class template member function 'void dynamic_array<size_t>::push_front(T)'
+          with
+          [
+              T=size_t
+          ]
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(73): note: see reference to function template instantiation 'void dynamic_array<size_t>::push_front(T)' being compiled
+          with
+          [
+              T=size_t
+          ]
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(53): note: see reference to class template instantiation 'dynamic_array<size_t>' being compiled
+c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(69): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(64): note: while compiling class template member function 'void dynamic_array<size_t>::push_back(T)'
+          with
+          [
+              T=size_t
+          ]
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(55): note: see reference to function template instantiation 'void dynamic_array<size_t>::push_back(T)' being compiled
+          with
+          [
+              T=size_t
+          ]
+c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(51): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(32): note: while compiling class template member function 'dynamic_array<size_t> &dynamic_array<size_t>::operator =(const dynamic_array<size_t> &)'
+  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(65): note: see reference to function template instantiation 'dynamic_array<size_t> &dynamic_array<size_t>::operator =(const dynamic_array<size_t> &)' being compiled
   DynamicArrays.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Code Design and Data Structures\Exercises\DynamicArrays\Debug\DynamicArrays.exe
