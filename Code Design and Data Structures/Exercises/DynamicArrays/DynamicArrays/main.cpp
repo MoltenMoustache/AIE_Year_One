@@ -7,70 +7,72 @@
 int main() {
 	srand(time(nullptr));
 
-	// LINKED LISTS
-	linked_list<int> my_list;
+	// *** LINKED LISTS ***
+	std::cout << "\n*** LINKED LIST ***\n";
+	linked_list<int> int_list;
 
-	for (int i = 0; i < 6; i++)
+	for (size_t i = 0; i < 11; i++)
 	{
-		my_list.push_back(i+1);
+		int_list.push_back(i);					// inserts i at end of list
 	}
+	int_list.display();							// displays the list to console
+	int_list.pop_back();						// deletes last element of list
+	int_list.pop_front();						// deletes first element of list
+	int_list.display();
+	int_list.remove_by_index(5);				// deletes element at Xth index
+	int_list.remove_by_value(2);				// deletes all elements of value X within list
+	int_list.display();
+	std::cout << "Number of elements in list: " << int_list.count() << std::endl;			// list.count() returns number of elements in list
+	
+	int_list.clear();
+	int_list.push_front(19);					// inserts value into start of list
+	int_list.push_front(72);
+	int_list.display();
+	std::cout << "First value in list: " << int_list.first_value() << "\n";							// list.first_value() returns the value of the first element
+	std::cout << "Last value in list: " << int_list.last_value() << "\n";							// list.first_value() returns the value of the first element
 
-	for (int i = 0; i < 9; i++)
-	{
-		my_list.push_front(i+1);
-	}
-
-	my_list.display();
-	std::cout << "\n=====================================\n\n";
-	std::cout << std::endl << std::endl;
-	my_list.remove_by_value(size_t(1));
-	my_list.display();
-	std::cout << my_list.end_index() << std::endl;
-	//std::cout << "\n=====================================\n\n";
-	////my_list.pop_front();
-	////my_list.insert(54, 3);
-	////my_list.display();
-
-	//std::cout << "\nThere are " << my_list.count() << " number of elements in this list!\n";
-	//std::cout << "\nFirst value of list is; " << my_list.first_value() << " and the second value is; " << my_list.last_value() << std::endl;
-
-	//my_list.pop_back();
-	//my_list.display();
-	//my_list.clear();
-	//my_list.display();
-
-	if (my_list.is_empty()) {
-		std::cout << "\nList empty!\n";
+	if (int_list.is_empty()) {					// list.is_empty() returns a boolean depending on whether or not the list is empty
+		std::cout << "List is empty!\n";
 	}
 	else {
-		std::cout << "\nList not empty!\n";
+		std::cout << "List isn't empty!\n";
 	}
 
+	int_list.clear();
+	if (int_list.is_empty()) {
+		std::cout << "List is empty!\n";
+	}
+	else {
+		std::cout << "List isn't empty!\n";
+	}
 
+	std::cout << "Start node*: " << int_list.start() << "\n";							// list.start() returns the m_start node
+	std::cout << "End node*: " << int_list.end() << "\n";							// list.end() returns the m_end node
 
+	// *** DYNAMIC ARRAY ***
+	std::cout << "\n*** DYNAMIC ARRAY ***\n";
+	dynamic_array<int> int_array;
 
-	// DYNAM ARRAYS
-	dynamic_array<size_t> dynamArray;
-
-	dynamArray.push_back(10);
-	dynamArray.push_back(5);
-	dynamArray.push_back(23);
-
-	dynamArray.pop();
-	dynamArray.pop();
-
-	dynamArray.push_back(100);
-
-	dynamic_array<size_t> dynamArray_2;
-	dynamArray_2 = dynamArray;
-
-	for (size_t i = 0; i < 10; i++)
+	for (size_t i = 0; i < 11; i++)
 	{
-		dynamArray_2.push_back(rand() % 100);
+		int_array.push_back(i);					// inserts i at end of array
 	}
 
-	size_t d = dynamArray_2[7];
-	dynamArray_2.push_front(d);
+	// insert_at_index(array, array size, index)
+	// insert_at_index(dynamic array, array size, index)
+
+	int_array.remove_at_index(3);				// delete array element at index X
+	int_array.pop();							// delete last element of array
+	int_array.push_back(12);
+	int_array.push_front(14);					// insert at front of array
+	int_array.push_at_index(18, 5);				// push the value 18 to index 5
+	int_array.display();						// displays the array to console
+	int_array.clear();							// clears the array
+	int_array.push_front(17);
+	int_array.push_back(7);
+	int_array.display();
+
+	system("pause");
 
 	return 0;
 }

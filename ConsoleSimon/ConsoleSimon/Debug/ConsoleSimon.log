@@ -1,0 +1,26 @@
+﻿  main.cpp
+c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\main.cpp(60): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\linked_list.h(219): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\linked_list.h(213): note: while compiling class template member function 'bool linked_list<Colour>::check_input(const T &,const int)'
+          with
+          [
+              T=Colour
+          ]
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\main.cpp(77): note: see reference to function template instantiation 'bool linked_list<Colour>::check_input(const T &,const int)' being compiled
+          with
+          [
+              T=Colour
+          ]
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\main.cpp(63): note: see reference to class template instantiation 'linked_list<Colour>' being compiled
+c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\linked_list.h(224): error C2678: binary '<<': no operator found which takes a left-hand operand of type 'std::istream' (or there is no acceptable conversion)
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\main.cpp(40): note: could be 'std::ostream &operator <<(std::ostream &,const Colour &)'
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\linked_list.h(224): note: or       'built-in C++ operator<<(bool, T)'
+          with
+          [
+              T=Colour
+          ]
+  c:\users\s191184\documents\github\aie_year_one\consolesimon\consolesimon\linked_list.h(224): note: while trying to match the argument list '(std::istream, T)'
+          with
+          [
+              T=Colour
+          ]

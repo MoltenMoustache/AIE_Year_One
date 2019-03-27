@@ -17,6 +17,7 @@ public:
 	node<T>* m_start = nullptr;
 	node<T>* m_end = nullptr;
 
+	// [DONE]
 	linked_list() {
 		// allocating memory for sentinel nodes
 		m_start = new node<T>();
@@ -27,6 +28,7 @@ public:
 		m_end->m_previous = m_start;
 	}
 
+	// [DONE]
 	~linked_list() {
 		node<T>* m_current = m_start->m_next;
 		while (m_current != m_end) {
@@ -43,6 +45,7 @@ public:
 		m_end = nullptr;
 	}
 
+	// [DONE]
 	void push_back(const T& a_new_data) {
 		node<T>* m_new = new node<T>();
 		m_new->m_data = a_new_data;
@@ -53,6 +56,7 @@ public:
 		m_end->m_previous = m_new;
 	}
 
+	// [DONE]
 	void push_front(const T& a_new_data) {
 		node<T>* m_new = new node<T>();
 		m_new->m_data = a_new_data;
@@ -63,9 +67,7 @@ public:
 		m_start->m_next = m_new;
 	}
 
-	// insert a_new_data at location a_index
-	// if a_index is out of bounds
-	// data inserted at m_data
+	// [DONE]
 	void insert(const T& a_new_data, const size_t a_index) {
 		// count to index
 		node<T>* m_current = m_start->m_next;
@@ -89,6 +91,7 @@ public:
 		m_current = m_new_location;
 	}
 
+	// [DONE]
 	void remove_by_index(const size_t a_index) {
 		// count to index
 		node<T>* m_current = m_start->m_next;
@@ -110,6 +113,7 @@ public:
 		}
 	}
 
+	// [DONE]
 	void remove_by_value(const T a_value) {
 		node<T>* m_current = m_start->m_next;
 
@@ -128,35 +132,31 @@ public:
 
 	}
 
-	size_t end_index() {
-		node<T>* m_current = m_start->m_next;
-		size_t counter = 1;
-
-		while (m_current != m_end)
-		{
-			m_current = m_current->m_next;
-			counter++;
-		}
-
-		return --counter;
+	// [DONE]
+	node<T>* start() {
+		return m_start;
 	}
 
-	size_t start_index() {
-		return size_t(1);
+	// [DONE]
+	node<T>* end() {
+		return m_end;
 	}
 
+	// [DONE]
 	void pop_back() {
 		m_end->m_previous->m_previous->m_next = m_end;
 		m_end->m_previous = m_end->m_previous->m_previous;
 	}
 
+	// [DONE]
 	void pop_front() {
 		m_start->m_next->m_next->m_previous = m_start;
 		m_start->m_next = m_start->m_next->m_next;
 	}
 
+	// [DONE]
 	int count() {
-		node<T>* m_current = m_start;
+		node<T>* m_current = m_start->m_next;
 		int counter = 0;
 
 		while (m_current != m_end)
@@ -164,17 +164,20 @@ public:
 			m_current = m_current->m_next;
 			counter++;
 		}
-		return ++counter;
+		return counter;
 	}
 
+	// [DONE]
 	T first_value() {
 		return m_start->m_next->m_data;
 	}
 
+	// [DONE]
 	T last_value() {
 		return m_end->m_previous->m_data;
 	}
 
+	// [DONE]
 	bool is_empty() {
 		if (m_start->m_next == m_end && m_end->m_previous == m_start) {
 			return true;
@@ -184,6 +187,7 @@ public:
 		}
 	}
 
+	// [DONE]
 	void clear() {
 		node<T>* m_current = m_start->m_next;
 		while (m_current != m_end) {
@@ -197,10 +201,11 @@ public:
 		m_end->m_previous = m_start;
 	}
 
+	// [DONE]
 	void display() {
 		node<T>* m_current = m_start->m_next;
 
-		std::cout << "Linked List:\n";
+		std::cout << "Linked List:\t";
 
 		while (m_current != m_end)
 		{
@@ -209,4 +214,5 @@ public:
 		}
 		std::cout << std::endl;
 	}
+
 };

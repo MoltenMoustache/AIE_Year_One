@@ -55,49 +55,30 @@ public:
 		return *this;
 	}
 
-	T operator[](const int a_index) {
+	// [DONE]
+	T& operator[](const int a_index) {
 		return m_data[a_index];
 	}
 
 	// DONE
-	// adds new array element to end of array
 	void push_back(T a_new_data) {
 		if (m_count == m_capacity) {
-			m_capacity += m_default_capacity;
-			T *m_newArray = new T[m_capacity];
-			
-			for (size_t i = 0; i < m_count; i++)
-			{
-				m_newArray[i] = m_data[i];
-			}
-
-			delete[] m_data;
-			m_data = m_newArray;
-
+			grow();
 		}
 		m_data[m_count] = a_new_data;
 		m_count++;
-		std::cout << *m_data << std::endl;
 	}
 
 	// DONE
-	// removes last array element
 	void pop() {
 		m_count--;
 	}
-
+	
+	// [DONE]
 	void push_front(T a_new_data) {
 
 		if (m_count == m_capacity || (m_count + 1) == m_capacity) {
-			m_capacity += m_default_capacity;
-			T *m_newArray = new T[m_capacity];
-
-			for (size_t i = 0; i < m_count; i++)
-			{
-				m_newArray[i] = m_data[i];
-			}
-			delete[] m_data;
-			m_data = m_newArray;
+			grow();
 		}
 
 		for (size_t i = m_count; i > 0; i--)
@@ -106,6 +87,71 @@ public:
 		}
 		m_data[1] = m_data[0];
 		m_data[0] = a_new_data;
+		m_count++;
+	}
+	
+	// [DONE]
+	void push_at_index(const T& a_new_value, size_t a_index) {
+		if (m_count == m_capacity) {
+			grow();
+		}
+
+		for (size_t i = m_count - 1; i >= a_index; i--)
+		{
+			m_data[i + 1] = m_data[i];
+		}
+		m_data[a_index] = a_new_value;
+		m_count++;
+	}
+
+	// [NEEDS WORK]
+	void push_at_index(const T* a_new_value, size_t a_element_count, size_t a_index) {
+		while (m_count + a_element_count >= m_capacity) {
+			grow();
+		}
+
+		for (size_t i = m_count - 1; i >= a_index; i--)
+		{
+			m_data[i + a_element_count] = m_data[i];
+		}
+
+		size_t j = 0;
+		for (size_t i = a_index; i < a_index + a_element_count; i++, j++)
+		{
+			m_data[a_index] = a_new_value[j];
+		}
+		m_count+= a_element_count;
+	}
+
+	// [NEEDS WORK]
+	void push_at_index(const dynamic_array<T>& a_data, size_t a_index) {
+		push_at_index(a_data.m_data, a_data.m_count, a_index);
+	}
+
+	// [DONE]
+	void remove_at_index(size_t a_index, size_t a_count = 1) {
+		for (size_t i = a_index; i + a_count < m_count; i++)
+		{
+			m_data[i] = m_data[i + a_count];
+		}
+		m_count += a_count;
+	}
+
+	// [DONE]
+	void clear() {
+		m_count = 0;
+	}
+
+	// [DONE]
+	void display() {
+
+		std::cout << "Dynamic Array:\t";
+
+		for (size_t i = 0; i < m_count; i++)
+		{
+			std::cout << m_data[i] << ", ";
+		}
+		std::cout << std::endl;
 	}
 
 private:
@@ -113,5 +159,40 @@ private:
 	int m_capacity = 0;
 	int m_count = 0;
 	const int m_default_capacity = 8;
-};
+	
 
+	// [DONE]
+	void grow() {
+		if (m_count == m_capacity) {
+			m_capacity += m_default_capacity;
+			T *m_newArray = new T[m_capacity];
+
+			for (size_t i = 0; i < m_count; i++)
+			{
+				m_newArray[i] = m_data[i];
+			}
+
+			delete[] m_data;
+			m_data = m_newArray;
+			trim();
+		}
+
+	}
+
+	// [DONE]
+	void trim() {
+		if (m_count < m_capacity) {
+			m_capacity = m_count;
+			T *m_newArray = new T[m_capacity];
+
+			for (size_t i = 0; i < m_count; i++)
+			{
+				m_newArray[i] = m_data[i];
+			}
+
+			delete[] m_data;
+			m_data = m_newArray;
+		}
+	}
+
+};
