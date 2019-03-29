@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\josh\documents\github\aie_year_one\intro to c++\binaryfileio\binaryfileio\main.cpp(26): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned int', possible loss of data
-  BinaryFileIO.vcxproj -> C:\Users\Josh\Documents\GitHub\AIE_Year_One\Intro to C++\BinaryFileIO\Debug\BinaryFileIO.exe

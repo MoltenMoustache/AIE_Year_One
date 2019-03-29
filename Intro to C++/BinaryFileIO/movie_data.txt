@@ -1,0 +1,4 @@
+Movie Name: The Good, The Bad, The Ugly
+Release Year: 1966
+Director: Sergio Leone
+Rotten Tomatoes Score: 97%
