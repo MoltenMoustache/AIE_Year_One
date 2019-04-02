@@ -120,6 +120,8 @@
   <ItemGroup>
     <ClInclude Include="dynamic_array.h" />
     <ClInclude Include="linked_list.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
