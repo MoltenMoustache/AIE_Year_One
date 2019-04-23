@@ -52,29 +52,32 @@ int main() {
 	//std::cout << "End node*: " << int_list.end() << "\n";							// list.end() returns the m_end node
 
 	//// *** DYNAMIC ARRAY ***
-	//std::cout << "\n*** DYNAMIC ARRAY ***\n";
-	//dynamic_array<int> int_array;
+	std::cout << "\n*** DYNAMIC ARRAY ***\n";
+	dynamic_array<int> int_array;
 
-	//for (size_t i = 0; i < 11; i++)
-	//{
-	//	int_array.push_back(i);					// inserts i at end of array
-	//}
+	for (int i = 0; i < 11; i++)
+	{
+		int_array.push_back(i);					// inserts i at end of array
+	}
 
-	//// insert_at_index(array, array size, index)
-	//// insert_at_index(dynamic array, array size, index)
+	// insert_at_index(array, array size, index)
+	// insert_at_index(dynamic array, array size, index)
 
-	//int_array.remove_at_index(3);				// delete array element at index X
-	//int_array.pop();							// delete last element of array
-	//int_array.push_back(12);
-	//int_array.push_front(14);					// insert at front of array
-	//int_array.push_at_index(18, 5);				// push the value 18 to index 5
-	//int_array.display();						// displays the array to console
-	//int_array.clear();							// clears the array
-	//int_array.push_front(17);
-	//int_array.push_back(7);
-	//int_array.display();
+	int_array.remove_at_index(3);				// delete array element at index X
+	int_array.pop();							// delete last element of array
+	int_array.push_back(12);
+	int_array.push_front(14);					// insert at front of array
+	int_array.push_at_index(18, 5);				// push the value 18 to index 5
+	int_array.display();						// displays the array to console
+	int_array.clear();							// clears the array
+	int_array.push_front(17);
+	int_array.push_back(7);
+	int_array.display();
+	int n = sizeof(int_array) / sizeof(int_array[0]);
+	int_array.sort(0, n - 1);
+	int_array.display();
 
-	stack<int> int_stack;
+	/*stack<int> int_stack;
 	for (size_t i = 0; i < 10; i++)
 	{
 		int_stack.push(i+3);
@@ -107,7 +110,7 @@ int main() {
 		std::cout << "Queue is not empty!\n";
 	}
 	std::cout << "Front of Queue: " <<int_queue.front() << "\n";
-	int_queue.display();
+	int_queue.display();*/
 	system("pause");
 
 	return 0;

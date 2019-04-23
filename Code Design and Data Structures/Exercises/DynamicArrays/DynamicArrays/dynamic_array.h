@@ -154,6 +154,18 @@ public:
 		std::cout << std::endl;
 	}
 
+	// [NOT DONE]
+	// Quick sort?
+	void sort(int a_lowIndex, int a_highIndex)
+	{
+		if (a_lowIndex < a_highIndex)
+		{
+			int pi = partition(a_lowIndex, a_highIndex);
+			sort(a_lowIndex, pi - 1);
+			sort(pi + 1, a_highIndex);
+		}
+	}
+
 private:
 	T *m_data = nullptr;
 	int m_capacity = 0;
@@ -193,6 +205,30 @@ private:
 			delete[] m_data;
 			m_data = m_newArray;
 		}
+	}
+
+	// [DONE]
+	void swap(T *a, T *b) {										//function for swapping vikings in array, used for bubble sort
+		T temp = *a;
+		*a = *b;
+		*b = temp;
+	}
+
+	T partition(int a_lowIndex, int a_highIndex)
+	{
+		T pivot = m_data[a_highIndex];
+		int index = (a_lowIndex - 1);
+
+		for (int j = a_lowIndex; j <= a_highIndex; j++)
+		{
+			if (m_data[j] <= pivot)
+			{
+				index++;
+				swap(m_data[index], m_data[j]);
+			}
+		}
+		swap(m_data[index + 1], m_data[a_highIndex]);
+		return (index + 1);
 	}
 
 };
