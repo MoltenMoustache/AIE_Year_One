@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
+#include "Button.h"
 
 class SimonApp : public aie::Application {
 public:
@@ -12,12 +13,23 @@ public:
 	virtual bool startup();
 	virtual void shutdown();
 
+	// button declarations
+	Button* m_redButton;
+	Button* m_blueButton;
+	Button* m_greenButton;
+	Button* m_yellowButton;
+	Button* m_resetButton;
+
 	virtual void update(float deltaTime);
 	virtual void draw();
-	virtual void selectColour();
 
 protected:
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
+
+	void selectColour();
+	void ResetGame();
+
+	int m_scoreCounter;
 };

@@ -36,6 +36,9 @@ void Game2dApp::update(float deltaTime) {
 	aie::Input* input = aie::Input::getInstance();
 
 	mainCharacter->update(deltaTime);
+	if (mainCharacter->bullet != nullptr) {
+		mainCharacter->bullet->update(deltaTime);
+	}
 
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
@@ -52,12 +55,11 @@ void Game2dApp::draw() {
 
 	// draw your stuff here!
 	mainCharacter->draw(m_2dRenderer);
-
-	
+	if (mainCharacter->bullet != nullptr) {
+		mainCharacter->bullet->draw(m_2dRenderer);
+	}
 	// output some text, uses the last used colour
-	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
-	m_2dRenderer->drawText(m_font, "Press R to Reload", 100, 0);
-
+	m_2dRenderer->drawText(m_font, "Press R to Reload", 0, 0);
 	// done drawing sprites
 	m_2dRenderer->end();
 }
