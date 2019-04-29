@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/c++,windows,visualstudio
+u# Created by https://www.gitignore.io/api/c++,windows,visualstudio
 # Edit at https://www.gitignore.io/?templates=c++,windows,visualstudio
 
 ### C++ ###
@@ -28,7 +28,6 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
