@@ -6,6 +6,7 @@
 #include "Stack.h"
 #include <string>
 #include <ctime>
+#include <thread>
 
 Stack<Colour> simonColours;
 Stack<Colour> inputColours;
@@ -32,6 +33,8 @@ bool SimonApp::startup() {
 	m_yellowButton = new Button("Yellow", 225, 120, 120, 120);
 
 	m_resetButton = new Button("Restart", 75, 465, 120, 50);
+
+	flashTimer = new FunctionTimer(1.5f);
 
 	srand(time(nullptr));
 	selectColour();
@@ -128,6 +131,10 @@ void SimonApp::update(float deltaTime) {
 		// clear both stacks and reset index to 0
 		ResetGame();
 	}
+
+	if (flashTimer->m_currTime > 0) {
+		flashTimer->update(deltaTime);
+	}
 }
 
 void SimonApp::ResetGame() {
@@ -152,7 +159,6 @@ void SimonApp::draw() {
 	char yelArray[] = "YELLOW";
 
 	// button GUI's
-	m_redButton->draw(m_2dRenderer, 1.0f, 0.0f, 0.0f);
 	m_blueButton->draw(m_2dRenderer, 0.0f, 0.0f, 1.0f);
 	m_greenButton->draw(m_2dRenderer, 0.0f, 1.0f, 0.0f);
 	m_yellowButton->draw(m_2dRenderer, 1.0f, 1.0f, 0.0f);
@@ -160,6 +166,22 @@ void SimonApp::draw() {
 	m_resetButton->draw(m_2dRenderer, 1.0f, 1.0f, 0.0f);
 	
 	float yPos = 30;
+
+	for (size_t i = 0; i < simonColours.size(); i++)
+	{
+		if (simonColours[i] == Colour::Red){
+			
+		}
+	}
+
+	int counter = 5;
+	_sleep(1000);
+	while (counter >= 1)
+	{
+		_sleep(1000);
+		counter--;
+	}
+
 	for (size_t i = 0; i < simonColours.size(); i++)
 	{
 		if (!simonColours.isEmpty())
@@ -167,9 +189,13 @@ void SimonApp::draw() {
 			// gets current colour in stack and display the text
 			switch (simonColours[i]) {
 			case Colour::Red:
-				m_2dRenderer->setRenderColour(1.0f, 0.0f, 0.0f, 1.0f);
+				/*m_2dRenderer->setRenderColour(1.0f, 0.0f, 0.0f, 1.0f);
 				m_2dRenderer->drawText(m_font, redArray, 20, yPos);
-				m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
+				m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);*/
+
+				m_redButton->draw(m_2dRenderer, 1.0f, 0.0f, 0.0f);
+				_sleep(2);
+				m_redButton->draw(m_2dRenderer, 1.0f, 1.0f, 1.0f);
 				break;
 			case Colour::Blue:
 				m_2dRenderer->setRenderColour(0.0f, 0.0f, 1.0f, 1.0f);

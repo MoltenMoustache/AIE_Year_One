@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Button.h"
+#include "FunctionTimer.h"
 
 class SimonApp : public aie::Application {
 public:
@@ -19,6 +20,8 @@ public:
 	Button* m_greenButton;
 	Button* m_yellowButton;
 	Button* m_resetButton;
+
+	FunctionTimer* flashTimer;
 
 	virtual void update(float deltaTime);
 	virtual void draw();

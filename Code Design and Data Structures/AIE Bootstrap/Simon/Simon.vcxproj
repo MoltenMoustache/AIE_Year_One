@@ -163,11 +163,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="FunctionTimer.cpp" />
     <ClCompile Include="SimonApp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="FunctionTimer.h" />
     <ClInclude Include="SimonApp.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
