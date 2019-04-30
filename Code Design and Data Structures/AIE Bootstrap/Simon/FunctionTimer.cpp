@@ -15,7 +15,8 @@ FunctionTimer::~FunctionTimer()
 }
 
 void FunctionTimer::update(float deltaTime) {
-	m_currTime -= deltaTime;
+	if(m_currTime > 0)
+		m_currTime -= deltaTime;
 }
 
 void FunctionTimer::reset() {
