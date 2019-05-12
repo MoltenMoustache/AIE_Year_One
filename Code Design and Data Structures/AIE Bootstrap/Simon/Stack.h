@@ -81,6 +81,9 @@ public:
 		if (m_top > 0) {
 			m_data[m_top] = nullptr;
 			m_top--;
+		} else {
+			// Non critical error, game does not halt.
+			std::cout << "ERROR: .pop() invalid, Stack is empty.\n";
 		}
 	}
 
@@ -92,22 +95,15 @@ public:
 			m_capacity = m_default_capacity;
 			m_top = 0;
 		}
+		else {
+			// Non critical error, game does not halt.
+			std::cout << "ERROR: .clear() is invalid, Stack is already empty.\n";
+		}
 	}
 
 	// returns value of top of stack
 	T& top() {
 		return m_data[m_top - 1];
-	}
-
-	void display() {
-
-		std::cout << "Stack:\t";
-
-		for (size_t i = 0; i < m_top; i++)
-		{
-			std::cout << m_data[i] << ", ";
-		}
-		std::cout << std::endl;
 	}
 
 private:

@@ -1,33 +1,18 @@
 ﻿  main.cpp
-c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(137): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(132): note: while compiling class template member function 'void dynamic_array<int>::remove_at_index(size_t,size_t)'
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(66): note: see reference to function template instantiation 'void dynamic_array<int>::remove_at_index(size_t,size_t)' being compiled
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(56): note: see reference to class template instantiation 'dynamic_array<int>' being compiled
-c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(227): error C2664: 'void dynamic_array<int>::swap(T *,T *)': cannot convert argument 1 from 'T' to 'T *'
+c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(142): warning C4267: '-=': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(137): note: while compiling class template member function 'void dynamic_array<int>::remove_at_index(size_t,size_t)'
+  c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(31): note: see reference to function template instantiation 'void dynamic_array<int>::remove_at_index(size_t,size_t)' being compiled
+  c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(15): note: see reference to class template instantiation 'dynamic_array<int>' being compiled
+c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(130): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(113): note: while compiling class template member function 'void dynamic_array<int>::push_at_index(const T *,size_t,size_t)'
           with
           [
               T=int
           ]
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(227): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(218): note: while compiling class template member function 'T &dynamic_array<T>::partition(int,int)'
+  c:\users\josh\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\main.cpp(47): note: see reference to function template instantiation 'void dynamic_array<int>::push_at_index(const T *,size_t,size_t)' being compiled
           with
           [
               T=int
           ]
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(163): note: see reference to function template instantiation 'T &dynamic_array<T>::partition(int,int)' being compiled
-          with
-          [
-              T=int
-          ]
-c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(230): error C2664: 'void dynamic_array<int>::swap(T *,T *)': cannot convert argument 1 from 'T' to 'T *'
-          with
-          [
-              T=int
-          ]
-  c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(230): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
-c:\users\s191184\documents\github\aie_year_one\code design and data structures\exercises\dynamicarrays\dynamicarrays\dynamic_array.h(231): error C2440: 'return': cannot convert from 'int' to 'T &'
-          with
-          [
-              T=int
-          ]
+  DynamicArrays.vcxproj -> C:\Users\Josh\Documents\GitHub\AIE_Year_One\Code Design and Data Structures\Exercises\DynamicArrays\x64\Debug\DynamicArrays.exe
