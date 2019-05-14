@@ -2,6 +2,7 @@
 #include "Vector3.h"
 #include "Vector2.h"
 #include "Vector4.h"
+#include "Matrix3.h"
 
 // prints the x, y, z variables of the passed in vector
 // Vector3
@@ -23,14 +24,8 @@ void PrintVector(Vector4 a_vec)
 }
 
 int main() {
-	Vector3 blankVector;								// Empty vector {0.0f, 0.0f, 0.0f}
-	Vector3 playerPos{ 1.0f, 4.5f, 1.0f };
-	Vector3 playerOffset{ 2.0f, 0.0f, 5.0f };
-
-	Vector3 maxPlayerPos = playerPos.Max(playerOffset);
-	Vector3 minPlayerPos = playerPos.Min(playerOffset);
-	PrintVector(maxPlayerPos);
-	PrintVector(minPlayerPos);
+	Matrix3 matrix = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
+	
 
 	
 
