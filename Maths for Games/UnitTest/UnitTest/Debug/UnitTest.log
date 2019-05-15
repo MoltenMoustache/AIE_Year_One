@@ -1,3 +1,4 @@
-﻿unittest.obj : error LNK2019: unresolved external symbol "public: class Matrix3 __thiscall Matrix3::operator=(class Matrix3 const &)const " (??4Matrix3@@QBE?AV0@ABV0@@Z) referenced in function "bool __cdecl runUnitTests(void)" (?runUnitTests@@YA_NXZ)
-molten_maths.lib(Matrix3.obj) : error LNK2001: unresolved external symbol "public: class Matrix3 __thiscall Matrix3::operator=(class Matrix3 const &)const " (??4Matrix3@@QBE?AV0@ABV0@@Z)
-C:\Users\s191184\Documents\GitHub\AIE_Year_One\Maths for Games\UnitTest\Debug\UnitTest.exe : fatal error LNK1120: 1 unresolved externals
+﻿  main.cpp
+  unittest.cpp
+  Generating Code...
+  UnitTest.vcxproj -> C:\Users\Josh\Documents\GitHub\AIE_Year_One\Maths for Games\UnitTest\Debug\UnitTest.exe

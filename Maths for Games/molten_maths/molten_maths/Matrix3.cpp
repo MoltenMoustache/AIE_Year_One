@@ -130,14 +130,15 @@ Matrix3 Matrix3::Transposed() const {
 }
 
 // DELETE THIS
-Matrix3 Matrix3::operator = (const Matrix3& a_other) const {
-	Matrix3 result;
-	//^ not changing anything
-	result.axis[0] = a_other.axis[0];
-	result.axis[1] = a_other.axis[1];
-	result.axis[2] = a_other.axis[2];
+Matrix3& Matrix3::operator = (const Matrix3& a_other) {
 
-	return result;
+	//^ not changing anything
+	for (size_t i = 0; i < 9; i++)
+	{
+		m_data1D[i] = a_other.m_data1D[i];
+	}
+
+	return *this;
 }
 
 void Matrix3::setScaled(const float a_xScale, const float a_yScale, const float a_zScale) {

@@ -131,15 +131,13 @@ Matrix4 Matrix4::operator - (const int& a_scalar) const {
 	return result;
 }
 
-Matrix4 Matrix4::operator = (const Matrix4& a_other) const {
-	Matrix4 result;
+Matrix4& Matrix4::operator = (const Matrix4& a_other) {
+	axis[0] = a_other.axis[0];
+	axis[1] = a_other.axis[1];
+	axis[2] = a_other.axis[2];
+	axis[3] = a_other.axis[3];
 
-	result.axis[0] = a_other.axis[0];
-	result.axis[1] = a_other.axis[1];
-	result.axis[2] = a_other.axis[2];
-	result.axis[3] = a_other.axis[3];
-
-	return result;
+	return *this;
 }
 
 

@@ -1,14 +1,29 @@
-﻿  Matrix3.cpp
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(171): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(172): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(178): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(179): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(180): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(181): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(186): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(187): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(188): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s191184\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(189): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  molten_maths.vcxproj -> C:\Users\s191184\Documents\GitHub\AIE_Year_One\Maths for Games\molten_maths\Debug\molten_maths.lib
+﻿  Matrix2.cpp
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(43): warning C4552: '*': result of expression not used
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(146): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(147): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(148): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(149): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(154): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(155): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(156): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix2.cpp(157): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Matrix3.cpp
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(171): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(172): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(174): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(179): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(180): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(181): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(182): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(187): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(188): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(189): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\matrix3.cpp(190): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Vector3.cpp
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\vector3.cpp(105): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\vector3.cpp(114): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\josh\documents\github\aie_year_one\maths for games\molten_maths\molten_maths\vector3.cpp(145): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  molten_maths.vcxproj -> C:\Users\Josh\Documents\GitHub\AIE_Year_One\Maths for Games\molten_maths\Debug\molten_maths.lib

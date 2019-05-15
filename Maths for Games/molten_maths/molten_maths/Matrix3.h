@@ -52,7 +52,7 @@ public:
 
 	Matrix3 Transposed() const;
 
-	Matrix3 operator = (const Matrix3& a_other) const;
+	Matrix3& operator = (const Matrix3& a_other);
 
 	void setScaled(const float a_xScale, const float a_yScale, const float a_zScale);
 	void setScaled(const Vector3& a_vec);

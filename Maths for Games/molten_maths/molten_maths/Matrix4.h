@@ -59,7 +59,7 @@ public:
 	// Matrix - Scalar
 	Matrix4 operator - (const int& a_scalar) const;
 
-	Matrix4 operator = (const Matrix4& a_other) const;
+	Matrix4& operator = (const Matrix4& a_other);
 
 	void setScaled(const float a_xScale, const float a_yScale, const float a_zScale, const float a_tScale);
 	void setScaled(const Vector4& a_vec);

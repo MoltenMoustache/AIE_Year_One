@@ -120,13 +120,12 @@ Matrix2 Matrix2::operator - (const int& a_scalar) const {
 	return result;
 }
 
-Matrix2 Matrix2::operator = (const Matrix2& a_other) const {
-	Matrix2 result;
+Matrix2& Matrix2::operator = (const Matrix2& a_other) {
 
-	result.axis[0] = a_other.axis[0];
-	result.axis[1] = a_other.axis[1];
+	axis[0] = a_other.axis[0];
+	axis[1] = a_other.axis[1];
 
-	return result;
+	return *this;
 }
 
 
