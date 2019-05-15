@@ -4,9 +4,16 @@
 class Matrix3 {
 public:
 
+	// Constructor for 3x Vectors
 	Matrix3(Vector3 a_xAxis, Vector3 a_yAxis, Vector3 a_zAxis) : xAxis(a_xAxis), yAxis(a_yAxis), zAxis(a_zAxis) {};
-	Matrix3(float a_x1, float a_x2, float a_x3, float a_y1, float a_y2, float a_y3, float a_z1, float a_z2, float a_z3) : xAxis(Vector3(a_x1, a_x2, a_x3)), yAxis(Vector3(a_y1, a_y2, a_y3)), zAxis(Vector3(a_z1, a_z2, a_z3)) {};
-	Matrix3() {};
+
+	// Constructor for 9x floats
+	Matrix3(const float a_x1 = 1.0f, const float a_x2 = 0.0f, const float a_x3 = 0.0f,
+			const float a_y1 = 0.0f, const float a_y2 = 1.0f, const float a_y3 = 0.0f,
+			const float a_z1 = 0.0f, const float a_z2 = 0.0f, const float a_z3 = 1.0f)
+			: xAxis(Vector3(a_x1, a_x2, a_x3)),
+			yAxis(Vector3(a_y1, a_y2, a_y3)),
+			zAxis(Vector3(a_z1, a_z2, a_z3)) {};
 	~Matrix3() {};
 
 	union {
@@ -19,7 +26,9 @@ public:
 		float m_data[3][3];
 	};
 
-	//static const Matrix3 identity = Matrix3( 1, 0, 0, 0, 1, 0, 0, 0, 1 );
+	const Matrix3 identity() const {
+		return Matrix3(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	}
 
 	Vector3& operator[] (int a_index) {
 		return axis[a_index];
