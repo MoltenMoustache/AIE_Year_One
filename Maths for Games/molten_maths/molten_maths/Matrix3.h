@@ -12,8 +12,6 @@ public:
 			const float a_y1 = 0.0f, const float a_y2 = 1.0f, const float a_y3 = 0.0f,
 			const float a_z1 = 0.0f, const float a_z2 = 0.0f, const float a_z3 = 1.0f);
 
-	~Matrix3() {};
-
 	union {
 		struct {
 			Vector3 xAxis;
@@ -51,8 +49,6 @@ public:
 	Matrix3 operator - (const int& a_scalar) const;
 
 	Matrix3 Transposed() const;
-
-	Matrix3& operator = (const Matrix3& a_other);
 
 	void setScaled(const float a_xScale, const float a_yScale, const float a_zScale);
 	void setScaled(const Vector3& a_vec);

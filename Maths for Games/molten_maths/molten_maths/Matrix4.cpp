@@ -131,15 +131,6 @@ Matrix4 Matrix4::operator - (const int& a_scalar) const {
 	return result;
 }
 
-Matrix4& Matrix4::operator = (const Matrix4& a_other) {
-	axis[0] = a_other.axis[0];
-	axis[1] = a_other.axis[1];
-	axis[2] = a_other.axis[2];
-	axis[3] = a_other.axis[3];
-
-	return *this;
-}
-
 
 void Matrix4::setScaled(const float a_xScale, const float a_yScale, const float a_zScale, const float a_tScale) {
 	// sets the scale of each axis

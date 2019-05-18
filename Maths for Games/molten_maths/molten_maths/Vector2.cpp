@@ -58,12 +58,6 @@ Vector2 Vector2::operator -= (const Vector2 a_other) {
 	return *this;
 }
 
-// Vector = Vector
-Vector2 Vector2::operator = (const Vector2& a_other) {
-	x = a_other.x, y = a_other.y;
-	return *this;
-}
-
 // Vector /= Float
 Vector2& Vector2::operator /= (float a_scalar)
 {

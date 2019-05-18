@@ -120,14 +120,6 @@ Matrix2 Matrix2::operator - (const int& a_scalar) const {
 	return result;
 }
 
-Matrix2& Matrix2::operator = (const Matrix2& a_other) {
-
-	axis[0] = a_other.axis[0];
-	axis[1] = a_other.axis[1];
-
-	return *this;
-}
-
 
 void Matrix2::setScaled(const float a_xScale, const float a_yScale) {
 	// sets the scale of each axis

@@ -6,7 +6,6 @@ class Vector3
 {
 public:
 	Vector3(const float a_x = 0.0f, const float a_y = 0.0f, const float a_z = 0.0f) :x(a_x), y(a_y), z(a_z) {};
-	~Vector3() {};
 
 	// Vector Subscript Operator
 	float& operator[] (const int a_index);
@@ -55,9 +54,6 @@ public:
 	Vector3& operator *= (const Vector3& a_other);
 	// Vector -= Vector
 	Vector3 operator -= (const Vector3 a_other);
-
-	// Vector = Vector
-	Vector3 operator = (const Vector3& a_other);
 
 	// Vector /= Float
 	Vector3& operator /= (float a_scalar);

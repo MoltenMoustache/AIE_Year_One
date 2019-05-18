@@ -7,7 +7,6 @@ class Vector2
 public:
 	Vector2() : x(0.0f), y(0.0f) {};
 	Vector2(const float a_x, const float a_y) :x(a_x), y(a_y) {};
-	~Vector2() {};
 
 	// Vector Subscript Operator
 	float& operator[] (const int a_index);
@@ -51,9 +50,6 @@ public:
 	Vector2& operator *= (const Vector2& a_other);
 	// Vector -= Vector
 	Vector2 operator -= (const Vector2 a_other);
-
-	// Vector = Vector
-	Vector2 operator = (const Vector2& a_other);
 
 	// Vector /= Float
 	Vector2& operator /= (float a_scalar);

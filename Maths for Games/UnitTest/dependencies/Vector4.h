@@ -6,7 +6,6 @@ class Vector4
 {
 public:
 	Vector4(const float a_x = 0.0f, const float a_y = 0.0f, const float a_z = 0.0f, const float a_w = 1.0f) :x(a_x), y(a_y), z(a_z), w(a_w) {};
-	~Vector4() {};
 
 	// Anonymous structs, all structs share the same memory address
 	union {
@@ -51,9 +50,6 @@ public:
 
 	// Vector -= Vector
 	Vector4 operator -= (const Vector4 a_other);
-
-	// Vector = Vector
-	Vector4 operator = (const Vector4& a_other);
 
 	// Vector /= Float
 	Vector4& operator /= (float a_scalar);

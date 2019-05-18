@@ -129,18 +129,6 @@ Matrix3 Matrix3::Transposed() const {
 	return result;
 }
 
-// DELETE THIS
-Matrix3& Matrix3::operator = (const Matrix3& a_other) {
-
-	//^ not changing anything
-	for (size_t i = 0; i < 9; i++)
-	{
-		m_data1D[i] = a_other.m_data1D[i];
-	}
-
-	return *this;
-}
-
 void Matrix3::setScaled(const float a_xScale, const float a_yScale, const float a_zScale) {
 	// sets the scale of each axis
 	xAxis = { a_xScale, 0, 0 };

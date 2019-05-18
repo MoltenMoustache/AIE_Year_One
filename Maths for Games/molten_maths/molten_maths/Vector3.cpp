@@ -59,12 +59,6 @@ Vector3 Vector3::operator -= (const Vector3 a_other) {
 	return *this;
 }
 
-// Vector = Vector
-Vector3 Vector3::operator = (const Vector3& a_other) {
-	x = a_other.x, y = a_other.y, z = a_other.z;
-	return *this;
-}
-
 // Vector /= Float
 Vector3& Vector3::operator /= (float a_scalar)
 {

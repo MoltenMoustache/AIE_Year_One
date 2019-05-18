@@ -27,8 +27,6 @@ public:
 			zAxis(Vector4(a_z1, a_z2, a_z3, a_z4)),
 			tAxis(Vector4(a_t1, a_t2, a_t3, a_t4)) {};
 
-	~Matrix4() {};
-
 	// Produces an identity matrix
 	const Matrix4 identity() const;
 
@@ -58,8 +56,6 @@ public:
 
 	// Matrix - Scalar
 	Matrix4 operator - (const int& a_scalar) const;
-
-	Matrix4& operator = (const Matrix4& a_other);
 
 	void setScaled(const float a_xScale, const float a_yScale, const float a_zScale, const float a_tScale);
 	void setScaled(const Vector4& a_vec);

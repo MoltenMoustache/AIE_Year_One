@@ -16,7 +16,6 @@ public:
 			const float a_y1 = 0.0f, const float a_y2 = 1.0f)
 			: xAxis(Vector2(a_x1, a_x2)), 
 			yAxis(Vector2(a_y1, a_y2)) {};
-	~Matrix2() {};
 
 	const Matrix2 identity() const;
 
@@ -42,8 +41,6 @@ public:
 
 	// Matrix - Scalar
 	Matrix2 operator - (const int& a_scalar) const;
-
-	Matrix2& operator = (const Matrix2& a_other);
 
 	void setScaled(const float a_xScale, const float a_yScale);
 	void setScaled(const Vector2& a_vec);
